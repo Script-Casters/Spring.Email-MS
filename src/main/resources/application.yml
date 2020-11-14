@@ -6,10 +6,17 @@ spring:
     url: jdbc:postgresql://localhost:5432/
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: C@ster1497!
+    password: Determination1497!
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: create
+
+mailgun:
+  username:
+  pass:
+  baseurl:
+  messageurl:
+
