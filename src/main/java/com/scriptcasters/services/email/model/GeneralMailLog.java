@@ -1,29 +1,32 @@
 package com.scriptcasters.services.email.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class GeneralMailLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long mailLogId;
-    @Column
+    @OneToOne(cascade = CascadeType.ALL)
     private EmailContact fromEmail;
-    @Column
+    @JsonIgnore
+    @OneToMany
     private List<EmailContact> toEmails;
-    @Column
+    @JsonIgnore
+    @OneToMany
     private List<EmailContact> ccEmails;
-    @Column
+    @JsonIgnore
+    @OneToMany
     private List<EmailContact> bccEmails;
-    @Column
     private String subject;
-    @Column
     private String emailContent;
 
 }

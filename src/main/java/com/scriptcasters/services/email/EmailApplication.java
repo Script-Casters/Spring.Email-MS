@@ -13,7 +13,7 @@ public class EmailApplication {
 		SpringApplication.run(EmailApplication.class, args);
 	}
 
-	@GetMapping("/welcome")
+	@GetMapping("/")
 	public ResponseEntity<?> getWelcomeMessage(){
 		return new ResponseEntity<>("Hello!", HttpStatus.OK);
 	}
