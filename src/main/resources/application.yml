@@ -1,3 +1,8 @@
+com:
+  scriptcasters:
+    ms:
+      name: "Email Microservice"
+
 server:
   port: 8081
 
