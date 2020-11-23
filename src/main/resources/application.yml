@@ -2,10 +2,14 @@ com:
   scriptcasters:
     ms:
       name: "Email Microservice"
-
+logging:
+  level:
+    org:
+      springframework:
+        web: "INFO"
+      hibernate: "ERROR"
 server:
   port: 8081
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/
