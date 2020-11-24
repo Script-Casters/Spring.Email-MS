@@ -1,3 +1,13 @@
+com:
+  scriptcasters:
+    ms:
+      name: "Email Microservice"
+logging:
+  level:
+    org:
+      springframework:
+        web: "INFO"
+      hibernate: "ERROR"
 server:
   port: 8081
 
@@ -13,3 +23,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: create
+
+mailgun:
+  username:
+  pass:
+  baseurl:
+  messageurl:
