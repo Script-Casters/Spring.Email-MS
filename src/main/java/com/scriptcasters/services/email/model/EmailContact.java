@@ -1,9 +1,11 @@
 package com.scriptcasters.services.email.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -13,8 +15,9 @@ public class EmailContact {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long emailContactId;
-    @ManyToOne
-    private GeneralMailLog mailLog;
+    @JsonIgnore
+    @OneToMany
+    private List<GeneralMail> mailLog;
     @Column
     private String emailAddress;
     @Column

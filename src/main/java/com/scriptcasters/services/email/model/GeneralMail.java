@@ -10,23 +10,27 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class GeneralMailLog {
+public class GeneralMail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long mailLogId;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private EmailContact fromEmail;
     @JsonIgnore
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<EmailContact> toEmails;
     @JsonIgnore
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<EmailContact> ccEmails;
     @JsonIgnore
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<EmailContact> bccEmails;
     private String subject;
-    private String emailContent;
+    private String emailContentPlainText;
+    private String emailContentHtml;
+    @OneToOne(cascade = CascadeType.ALL)
+    private EmailStatusFlags statusFlags;
+
 
 }
