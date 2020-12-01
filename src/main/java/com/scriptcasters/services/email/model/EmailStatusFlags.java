@@ -1,7 +1,6 @@
 package com.scriptcasters.services.email.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,6 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-@NoArgsConstructor
 public class EmailStatusFlags {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -18,5 +16,11 @@ public class EmailStatusFlags {
     private boolean isSent;
     private boolean hasErrors;
     private boolean isDelivered;
+
+    public EmailStatusFlags() {
+        isSent = false;
+        hasErrors = false;
+        isDelivered = false;
+    }
 
 }

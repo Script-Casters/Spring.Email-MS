@@ -1,7 +1,6 @@
-com:
-  scriptcasters:
-    ms:
-      name: "Email Microservice"
+scriptcasters:
+  ms:
+    name: "Email Microservice"
 logging:
   level:
     org:

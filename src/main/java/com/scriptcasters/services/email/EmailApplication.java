@@ -7,13 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @RestController
 public class EmailApplication {
 
-	@Value("${com.scriptcasters.ms.name}")
+	@Value("${scriptcasters.ms.name}")
 	private String msName;
 
 	public static void main(String[] args) {
@@ -21,7 +20,7 @@ public class EmailApplication {
 	}
 
 	@GetMapping("/")
-	public ResponseEntity<?> getHelloMessage(){
+	public ResponseEntity<?> getHelloMessage() {
 		return new ResponseEntity<>("Hello!", HttpStatus.OK);
 	}
 

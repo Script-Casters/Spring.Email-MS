@@ -15,20 +15,19 @@ public class GeneralMail {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long mailLogId;
-    @ManyToOne(cascade = CascadeType.ALL)
-    private EmailContact fromEmail;
+    private String fromEmail;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
-    private List<EmailContact> toEmails;
+    private List<String> toEmails;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
-    private List<EmailContact> ccEmails;
+    private List<String> ccEmails;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
-    private List<EmailContact> bccEmails;
+    private List<String> bccEmails;
     private String subject;
-    private String emailContentPlainText;
-    private String emailContentHtml;
+    private String contentPlainText;
+    private String contentHtml;
     @OneToOne(cascade = CascadeType.ALL)
     private EmailStatusFlags statusFlags;
 
