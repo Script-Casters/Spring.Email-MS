@@ -16,6 +16,7 @@ public class GeneralMail {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long mailLogId;
     private String fromEmail;
+    private String replyToEmail;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
     private List<String> toEmails;

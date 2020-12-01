@@ -17,6 +17,9 @@ public interface MailMessageMapper {
             @Mapping(source = "ccEmails", target = "cc"),
             @Mapping(source = "bccEmails", target = "bcc"),
             @Mapping(source = "subject", target = "subject"),
-            @Mapping(source = "text", target = "contentPlainText")})
+            @Mapping(source = "text", target = "contentPlainText"),
+            @Mapping(source = "fromEmail", target = "from"),
+            @Mapping(source = "replyToEmail", target = "replyTo")
+    })
     SimpleMailMessage fromGeneralMail(GeneralMail generalMail);
 }
